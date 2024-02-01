@@ -2,13 +2,14 @@ package com.astha.singh.controller;
 
 import com.astha.singh.model.Users;
 import com.astha.singh.service.UsersService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/Users")
 public class UsersController {
 
     @Autowired
@@ -20,7 +21,7 @@ public class UsersController {
         return  service.getAllUsers();
     }
     @PostMapping("/createUsers")
-    public Users createUsers(@RequestBody Users users)
+    public Users createUsers(@Valid @RequestBody Users users)
     {
         return  service.createUsers(users);
     }

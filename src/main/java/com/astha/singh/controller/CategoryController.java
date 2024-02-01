@@ -3,6 +3,7 @@ package com.astha.singh.controller;
 import com.astha.singh.model.Category;
 import com.astha.singh.model.Items;
 import com.astha.singh.service.CategoryService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,7 +33,7 @@ public class CategoryController {
     }
 
     @PostMapping("/createCategory")
-    public Category createCategory(@RequestBody Category category)
+    public Category createCategory( @Valid @RequestBody Category category)
     {
         return  service.createCategory(category);
     }

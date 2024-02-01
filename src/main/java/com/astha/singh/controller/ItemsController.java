@@ -2,6 +2,7 @@ package com.astha.singh.controller;
 
 import com.astha.singh.model.Items;
 import com.astha.singh.service.ItemsService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,7 +35,7 @@ public class ItemsController {
     }
     //CREATE
     @PostMapping ("/createItems")
-    public Items createItems(@RequestBody  Items items)
+    public Items createItems(@Valid  @RequestBody  Items items)
     {
         return  service.createItems(items);
     }

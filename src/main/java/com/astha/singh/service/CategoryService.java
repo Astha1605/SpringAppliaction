@@ -56,11 +56,10 @@ public class CategoryService {
         for(Integer itemid: itemsid)
         {
             Items items = itemsRepo.getReferenceById(itemid);
-            if(items  != null)
-            {
-                response.add(items);
-            }
+            response.add(items);
         }
+        Singleton singleton = Singleton.getInstance();
+        System.out.println(singleton.getList());
         return response;
     }
     public int totalPriceByCategoryId(int id)

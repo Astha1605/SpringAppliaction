@@ -28,7 +28,10 @@ public class ItemsService {
     }
     //CREATE
     public Items createItems(Items items)
+
     {
+        Singleton singleton = Singleton.getInstance();
+        singleton.addElement(items.getName());
        return repo.save(items);
     }
     //UPDATE

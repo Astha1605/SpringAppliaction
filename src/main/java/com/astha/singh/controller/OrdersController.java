@@ -2,6 +2,7 @@ package com.astha.singh.controller;
 
 import com.astha.singh.model.Orders;
 import com.astha.singh.service.OrdersService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,10 +18,11 @@ public class OrdersController {
     @GetMapping("/getAllOrders")
     public List<Orders> getAllOrders()
     {
+
         return  service.getAllOrders();
     }
     @PostMapping("/CreateOrders")
-    public Orders createOrders(@RequestBody Orders orders)
+    public Orders createOrders(@Valid @RequestBody Orders orders)
     {
         return  service.createOrders(orders);
     }
@@ -32,6 +34,7 @@ public class OrdersController {
     @DeleteMapping("/deleteOrders")
     public  void deleteOrders(@RequestParam Integer id)
     {
+
         service.deeleteOrders(id);
     }
 }

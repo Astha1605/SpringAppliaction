@@ -18,16 +18,19 @@ public class OrdersService {
     //READ
     public Orders getOrdersById(int id)
     {
+
         return repo.getReferenceById(id);
     }
     //READ ALL
     public List<Orders> getAllOrders()
     {
+
         return repo.findAll();
     }
     //CREATE
     public Orders createOrders(Orders orders)
     {
+
         return  repo.save(orders);
     }
     //UPDATE
@@ -39,6 +42,7 @@ public class OrdersService {
     //DELETE
     public void deeleteOrders(int id)
     {
+
         repo.deleteById(id);
     }
 }

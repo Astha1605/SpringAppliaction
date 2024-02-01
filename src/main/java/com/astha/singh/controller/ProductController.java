@@ -2,6 +2,7 @@ package com.astha.singh.controller;
 
 import com.astha.singh.model.Product;
 import com.astha.singh.service.ProductService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +22,7 @@ public class ProductController
     }
 
     @PostMapping("/addproduct")
-    public void addproduct(@RequestBody Product product)
+    public void addproduct(@Valid @RequestBody Product product)
     {
         service.createProduct(product);
     }

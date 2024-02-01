@@ -1,5 +1,6 @@
 package com.astha.singh.model;
 
+import com.astha.singh.annotation.ValidProduct;
 import jakarta.persistence.*;
 
 @Entity
@@ -10,6 +11,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    @ValidProduct
     private float price;
 
     public Product() {

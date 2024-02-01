@@ -1,5 +1,6 @@
 package com.astha.singh.model;
 
+import com.astha.singh.annotation.ValidUsers;
 import jakarta.persistence.*;
 
 @Entity
@@ -10,6 +11,7 @@ public class Users {
     private int id;
     private String name;
     private String mail;
+    @ValidUsers
     private String mobileNumber;
     private String address;
 

@@ -1,6 +1,7 @@
 package com.astha.singh.model;
 
 
+import com.astha.singh.annotation.ValidItemPrice;
 import jakarta.persistence.*;
 
 import java.util.PriorityQueue;
@@ -12,6 +13,7 @@ public class Items {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    @ValidItemPrice
     private  int price;
     private  String description;
     private int quantity;

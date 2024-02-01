@@ -1,5 +1,7 @@
 package com.astha.singh.model;
 
+import com.astha.singh.annotation.ValidCategory;
+import com.astha.singh.annotation.ValidProduct;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -11,6 +13,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    @ValidCategory
     private String type;
     List<Integer> listOfItems;
 

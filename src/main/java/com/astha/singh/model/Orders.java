@@ -1,5 +1,6 @@
 package com.astha.singh.model;
 
+import com.astha.singh.annotation.ValidOrders;
 import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -11,6 +12,7 @@ public class Orders {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    @ValidOrders
     private String summary;
     private int totalAmount;
     private String orderDate;
